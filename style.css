@@ -1,0 +1,163 @@
+
+/* Set up the page so the sizes work properly */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Set the basic page styles */
+body {
+    font-family: Arial, Geneva, sans-serif;
+    margin: 0;
+}
+
+a {
+    color: #2772B0;
+}
+
+/* Keep the content centered on the page */
+.wrapper {
+    width: 97%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* Make the pictures fit inside their boxes */
+div img {
+    width: 100%;
+    max-width: 225px;
+    height: auto;
+}
+
+/* Make each row use flexbox */
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Set the size and spacing of the boxes on mobile */
+[class*="col-"] {
+    margin-left: 4%;
+    flex: 0 0 92%;
+}
+
+/* Give the boxes their colors */
+.col-1 {
+    background-color: #A3CDD9;
+}
+
+.col-2 {
+    background-color: #FFFCE6;
+}
+
+.col-3 {
+    background-color: #A3CDD9;
+}
+
+.col-4 {
+    background-color: #C2B8AC;
+}
+
+/* Set up the last row */
+.col-six {
+    margin-left: 4%;
+    flex: 0 0 92%;
+    background-color: #D9E8D5;
+}
+
+/* Keep the fifth row in its normal order on mobile */
+.rambo,
+.remy,
+.zeke {
+    order: 0;
+}
+
+/* Tablet layout */
+@media only screen and (min-width: 480px) {
+
+    /* Show two boxes per line */
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        flex: 0 0 44%;
+    }
+
+
+    /* Keep the fourth row as one wide box */
+    .col-4 {
+        flex-basis: 92%;
+    }
+
+    /* Put Remy first on tablets */
+    .rambo,
+    .zeke {
+        flex: 0 0 44%;
+        order: 0;
+    }
+
+    .remy {
+        flex: 0 0 92%;
+        order: -1;
+    }
+
+    /* Show two boxes per line in the last row */
+    .row-six .col-six {
+        flex: 0 0 44%;
+    }
+}
+
+/* Desktop layout */
+@media only screen and (min-width: 768px) {
+
+    /* Make the regular boxes smaller */
+    .col-1 {
+        flex: 0 0 20%;
+    }
+
+    /* Make the wider boxes take up more space */
+    .col-2 {
+        flex: 0 0 44%;
+    }
+
+    /* Put the third row side by side */
+    .row-three .col-1 {
+        flex: 0 0 20%;
+    }
+
+    .row-three .col-3 {
+        flex: 0 0 68%;
+    }
+
+    /* Make the fourth row one big box */
+    .col-4 {
+        flex: 0 0 92%;
+    }
+
+    /* Put the fifth row back in its original order */
+    .rambo {
+        flex: 0 0 20%;
+        order: 0;
+    }
+
+    .remy {
+        flex: 0 0 44%;
+        order: 0;
+    }
+
+    .zeke {
+        flex: 0 0 20%;
+        order: 0;
+    }
+
+    /* Fit three boxes across in the last row */
+    .row-six .col-six {
+        flex: 0 0 28%;
+    }
+}
