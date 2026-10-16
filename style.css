@@ -73,7 +73,7 @@ div img {
 /* Tablet layout */
 @media only screen and (min-width: 480px) {
 
-    /* Use two equal columns on tablet screens */
+  /* Make two equal columns that can shrink when needed */
     .row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
